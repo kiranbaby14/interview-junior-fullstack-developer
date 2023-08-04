@@ -3,13 +3,30 @@ import axios from "axios";
 
 Injectable()
 export class ApiService {
-    async getAllCities() {
-        const apiUrl = process.env.DB_PROXY;
+
+    private readonly apiUrl: string;
+
+    constructor() {
+      this.apiUrl = process.env.DB_PROXY;
+    }
+
+    async getAllCityDetails(): Promise<string[]> {
         try {
-            const response = await axios.get(apiUrl);
-            return response.data;
+            const response = await axios.get(this.apiUrl);
+            const cityDetails = response.data.map(({ cityName, count }) => ({ cityName, count }));
+            return cityDetails;
           } catch (error) {
             return error.message;
           }
     }
+
+    async getCityNameDetails(cityName: String):  Promise<string[]>  {
+        const response = await axios.get(this.apiUrl);
+        const matchingCityNames = response.data
+          .filter((city) => city.cityName.toLowerCase().includes(cityName.toLowerCase()))
+          .map(({ cityName, count }) => ({ cityName, count }));
+    
+        return matchingCityNames;
+    }
+
 }
