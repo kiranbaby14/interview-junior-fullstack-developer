@@ -5,8 +5,8 @@ import { ApiService } from "./api.service";
 export class ApiController {
     constructor(private apiService: ApiService){}
 
-    @Get()
-    getCities(){
-        return this.apiService.getCities();
+    @Get("all-cities")
+    getAllCities(){
+        return this.apiService.getAllCities();
     }
 }
