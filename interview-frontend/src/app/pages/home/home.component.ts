@@ -19,13 +19,13 @@ export class HomeComponent implements OnInit{
   }
 
   public getMethod(){
-    this.http.get("http://localhost:8000/items").subscribe((data) => {
+    this.http.get(" http://localhost:3000/api/city/all").subscribe((data) => {
       this.getJsonValue = data;
     });
   }
 
   public postMethod(){
-    
+
     let body = {}
 
     this.http.post("http://localhost:8000/items", body).subscribe((data) => {
