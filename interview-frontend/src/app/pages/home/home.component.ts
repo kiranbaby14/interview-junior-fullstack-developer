@@ -1,5 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-home',
@@ -11,25 +11,25 @@ export class HomeComponent implements OnInit{
   public getJsonValue: any;
   public postJsonValue: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getMethod();
-    this.postMethod();
+    // this.postMethod();
   }
 
   public getMethod(){
-    this.http.get(" http://localhost:3000/api/city/all").subscribe((data) => {
+    this.apiService.getCities().subscribe((data) => {
       this.getJsonValue = data;
-    });
+    })
   }
 
-  public postMethod(){
+  // public postMethod(){
 
-    let body = {}
+  //   let body = {}
 
-    this.http.post("http://localhost:8000/items", body).subscribe((data) => {
-      this.postJsonValue = data;
-    });
-  }
+  //   this.http.post("http://localhost:8000/items", body).subscribe((data) => {
+  //     this.postJsonValue = data;
+  //   });
+  // }
 }
