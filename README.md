@@ -22,7 +22,7 @@
 
     `localhost:3000`
 
-    `localhost:8000`
+    `localhost:8000\items`
 
   to see the the running applications
   
