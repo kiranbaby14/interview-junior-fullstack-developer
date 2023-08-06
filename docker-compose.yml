@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  json-server:
+    image: json-server/interview-database
+    build:
+      context: ./interview-database 
+      dockerfile: Dockerfile
+    networks:
+      - app
+    ports:
+      - "8000:8000" # Map port 8000 on the host to port 8000 on the backend container
+
+  nest:
+    image:  nest/interview-backend
+    build:
+      context: ./interview-backend 
+      dockerfile: Dockerfile 
+    networks:
+      - app
+    ports:
+      - "3000:3000" 
+    depends_on:
+      - json-server # Make the nest service depend on the json-server service
+
+
+  angular:
+    image:  angular/interview-frontend
+    build:
+      context: ./interview-frontend 
+      dockerfile: Dockerfile 
+    ports:
+      - "4200:80"
+    depends_on:
+      - json-server
+      - nest
+
+networks:
+  app:

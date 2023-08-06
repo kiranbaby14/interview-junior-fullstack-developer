@@ -6,11 +6,8 @@
 /out-tsc
 /bazel-out
 
-# ENV
-# .env  # for now dont ignors this file
-
 # Node
-node_modules
+/node_modules
 npm-debug.log
 yarn-error.log
 
