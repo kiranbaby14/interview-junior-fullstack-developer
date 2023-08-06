@@ -67,7 +67,7 @@
   }
 </style>
 
-<div class="card-container" *ngFor="let city of getJsonValue">
+<div class="card-container" *ngFor="let city of sharedService.getSharedData()">
   <a class="card" rel="noopener" >
     <span [ngStyle]="{'color': 'green'}">CityName: {{city.cityName | json}}</span>
     <span [ngStyle]="{'color': 'red'}">Count: {{city.count | json}}</span>

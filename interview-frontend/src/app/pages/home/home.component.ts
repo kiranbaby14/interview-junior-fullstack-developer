@@ -1,35 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../../services/api/api.service";
+import { Component } from '@angular/core';
+import { SharedService } from 'src/app/services/data/shared.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
 
-  public getJsonValue: any;
-  public postJsonValue: any;
+export class HomeComponent{
 
-  constructor(private apiService: ApiService) {}
+  constructor(public sharedService: SharedService) {}
 
-  ngOnInit(): void {
-    this.getMethod();
-    // this.postMethod();
-  }
-
-  public getMethod(){
-    this.apiService.getCities().subscribe((data) => {
-      this.getJsonValue = data;
-    })
-  }
-
-  // public postMethod(){
-
-  //   let body = {}
-
-  //   this.http.post("http://localhost:8000/items", body).subscribe((data) => {
-  //     this.postJsonValue = data;
-  //   });
-  // }
 }

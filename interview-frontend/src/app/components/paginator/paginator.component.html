@@ -1,6 +1,6 @@
 <mat-paginator
-  [length]="50"
-  [pageSize]="5"
+  [length]="totalLength"
+  [pageSize]="pageSize"
   [showFirstLastButtons]="true"
   [pageIndex]="currentPage"
   (page)="handlePageEvent($event)">
