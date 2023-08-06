@@ -8,11 +8,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginatorComponent } from 'src/app/components/paginator/paginator.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

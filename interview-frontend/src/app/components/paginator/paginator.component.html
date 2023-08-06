@@ -1,7 +1,7 @@
 <mat-paginator
-  [length]="totalLength"
-  [pageSize]="pageSize"
+  [length]="apiService.totalLength"
+  [pageSize]="apiService.pageSize"
   [showFirstLastButtons]="true"
-  [pageIndex]="currentPage"
+  [pageIndex]="apiService.currentPage"
   (page)="handlePageEvent($event)">
 </mat-paginator>

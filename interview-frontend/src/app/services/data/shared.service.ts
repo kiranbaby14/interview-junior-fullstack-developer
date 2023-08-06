@@ -10,7 +10,6 @@ export class SharedService {
   constructor() { }
 
   public setSharedData(data: any[]) {
-    console.log("d", data)
     this.sharedData = data;
   }
 
