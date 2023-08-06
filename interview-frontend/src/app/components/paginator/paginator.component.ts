@@ -1,7 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
 import { MatPaginatorModule, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+
 import { PaginatorIntl } from "src/app/services/paginator/PaginatorIntl.service"
-import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api/api.service';
 import { SharedService } from 'src/app/services/data/shared.service';
 
@@ -15,8 +16,6 @@ import { SharedService } from 'src/app/services/data/shared.service';
 })
 
 export class PaginatorComponent implements OnInit {
-
-
 
   constructor(public apiService: ApiService,
     private sharedService: SharedService) { }
