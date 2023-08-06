@@ -27,6 +27,10 @@
   to see the the running applications
   
 ### Run Manually
+- Make  a small change at first
+  - currently the ports inside the server and datbase applications are communicating via docker host. So change it first
+  - change [here]: https://github.com/kiranbaby14/interview-junior-fullstack-developer/blob/master/interview-backend/.env to
+    `http://localhost:8000/items`
 - cd into each folder on different terminal seperately and run
   
       npm install
