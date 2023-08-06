@@ -4,7 +4,7 @@ import { ApiService } from "./api.service";
 /**
  * Controller class for the api.module
  */
-@Controller('api')
+@Controller('api/city')
 export class ApiController {
     /**
      * Constructor for the class
@@ -17,7 +17,7 @@ export class ApiController {
      * api endpoint for getting all city detail;s
      * @returns all city details
      */
-    @Get("city/all")
+    @Get("/all")
     getAllCityDetails(){
         return this.apiService.getAllCityDetails();
     }
@@ -29,7 +29,7 @@ export class ApiController {
      * @param cityName name to be searched for
      * @returns array of cities that includes the the given words in it
      */
-    @Get("city/search/:name")
+    @Get("/search/:name")
     getCityNameDetails(@Param('name') cityName: string ){
         return this.apiService.getCityNameDetails(cityName);
     }
