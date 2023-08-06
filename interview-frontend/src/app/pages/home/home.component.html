@@ -45,7 +45,7 @@
   }
 
   .card-container .card:not(.highlight-card):hover {
-    box-shadow: 0 4px 17px rgba(247, 255, 1, 0.35);
+    box-shadow: 0 4px 17px rgba(1, 153, 255, 0.35);
   }
 
 
@@ -69,7 +69,7 @@
 
 <div class="card-container" *ngFor="let city of getJsonValue">
   <a class="card" rel="noopener" >
-    <span [ngStyle]="{'color': 'green'}">CityName: {{getJsonValue[0].cityName | json}}</span>
-    <span [ngStyle]="{'color': 'red'}">Count: {{getJsonValue[0].count | json}}</span>
+    <span [ngStyle]="{'color': 'green'}">CityName: {{city.cityName | json}}</span>
+    <span [ngStyle]="{'color': 'red'}">Count: {{city.count | json}}</span>
   </a>
 </div>
