@@ -29,11 +29,8 @@ export class PaginatorComponent implements OnInit {
     this.apiService.getAllCities().subscribe((data: any) => {
       this.apiService.cities = data;
       this.apiService.totalLength = this.apiService.cities.length;
-      if (this.apiService.totalLength < this.apiService.pageSize) { // edge case when data is less than 5
-        this.apiService.pageSlice = this.apiService.cities.slice(0, this.apiService.totalLength);
-      } else {
+      // edge case when data is less than 5 is also habdled defaultly by slice
       this.apiService.pageSlice = this.apiService.cities.slice(0, this.apiService.pageSize);
-      }
       this.sharedService.setSharedData(this.apiService.pageSlice)
     })
   }
