@@ -16,6 +16,15 @@
 
       docker-compose up
   that's it
+- after running check
+  
+    `localhost:4200`
+
+    `localhost:3000`
+
+    `localhost:8000`
+
+  to see the the running applications
   
 ### Run Manually
 - cd into each folder on different terminal seperately and run
