@@ -1,34 +1,51 @@
 # Interview for Junior Full-Stack developer
 
-Dear applicant,
+- Completed All the tasks mentioned!
+- Fontend created using Angular.js
+- Backend created using Nest.js
+- Database runing using Json-server
+  - Moved `cities.json` file into `interview-database` folder and using `json-server` implemented a real world setting.
+  - So now, the frontend is in `interview-frontend` folder
+  - the backend is in `interview-backend` folder
+  - the database is in `interview-database` folder 
+- Dockerized the entire application 
 
-thank you again for applying for the Junior Full-Stack developer position at Erento. With the following task we would like to verify your coding skills. Expected timeline for this assignment is to be finished within a week.
+### Run using docker-compose 
+- cd  into main folder
+- Afterwards, run
 
-Below you can find 2 folders. Both are just simple initial applications generated from respective CLI tools. The [`interview-frontend`](./interview-frontend) is an Angular 16 frontend application and the [`interview-backend`](./interview-backend) is a NestJS 10 backend application.
+      docker-compose up
+  that's it
+  
+### Run Manually
+- cd into each folder on different terminal seperately and run
+  
+      npm install
 
-As you can already spot, both are javascript applications, which is by far the most used language at Erento.
+- then run the following commands on each terminal in the exact same order as shown below
+  
+  - interview-database (database (json-server)
+  
+          npx json-server --watch cities.json --port 8000
+  
+  - interview-backend (server (Nest.js))
+  
+          npm run start:dev 
 
-## What should you do?
+  - interview-database (frontend (Angular.js))
+  
+          npm start
 
-1. On the frontend replace the existing content with a form where you can search for a city and list the results in some list formatted below.
-2. On the backend prepare an endpoint to return the list of the cities which is matching the entry submitted from the frontend. Ideally, you will return up to 5 entries per page.
+### Functionalities Implemented
+  - Pagination
+  - In each pagination exactly 5 or les number of datas are shown
+  - considered all the edge cases
+  - Implemented a search bar where user can search using letters or words. And if those words are present in any of the city names they'll be shown.
 
-    In the root of this repository there is [cities.json](./cities.json) file - this should mock your database.
+### Screenshot
+  ![interview](https://github.com/kiranbaby14/interview-junior-fullstack-developer/assets/50899339/87fe4051-56ec-4c72-bd8d-293fc7616bbf)
 
-## Tips
-
-- You should make sure your code is functional.
-- You should also handle possible edge cases.
-- You should be happy with your solution.
-- Do you know how to test? This could be your chance to learn!
-- Any progress would be good to track over git commits.
-
-## Are you done?
-
-You can give us the accomplished assignment in 2 ways of your choice:
-1. Create a fork of our repository and send us a link to your Github repository when you are finished, or
-2. Remove `node_modules` folder in both applications pack it into an archive and send it over an email.
-
+   
 ## Further help
 
 To get more help on:
